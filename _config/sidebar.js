@@ -4,10 +4,10 @@ const pages = config('pages') // Get Pages from config
 export default [
   {
     title: 'qevent.sidebar.adminGroup',
-    icon: 'fab fa-blogger',
+    icon: 'far fa-calendar',
     children: [
       pages.qevent.events,
-      pages.qblog.categories,
+      pages.qevent.categories,
     ]
   },
 ]

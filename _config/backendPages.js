@@ -8,7 +8,7 @@ export default {
     page: () => import('@imagina/qevent/_pages/admin/events/index'),
     layout: () => import('@imagina/qsite/_layouts/master.vue'),
     title: 'qevent.sidebar.adminEvents',
-    icon: 'fas fa-newspaper',
+    icon: 'fas fa-calendar-check',
     subHeader: {
       refresh: true,
     }
@@ -22,7 +22,7 @@ export default {
     page: () => import('@imagina/qevent/_pages/admin/categories/index'),
     layout: () => import('@imagina/qsite/_layouts/master.vue'),
     title: 'qevent.sidebar.adminCategories',
-    icon: 'fas fa-newspaper',
+    icon: 'fas fa-calendar-week',
     subHeader: {
       refresh: true,
     }
