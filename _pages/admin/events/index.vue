@@ -110,6 +110,16 @@ export default {
               apiRoute: 'apiRoutes.qevent.categories'
             }
           },
+          departmentId: {
+            value: null,
+            type: 'treeSelect',
+            props: {
+              label: this.$tr('ui.label.department')
+            },
+            loadOptions: {
+              apiRoute: 'apiRoutes.quser.departments'
+            }
+          },
           status: {
             value: '1',
             type: 'select',
@@ -121,7 +131,7 @@ export default {
                 {label: this.$tr('ui.label.disabled'), value: '0'},
               ]
             },
-          },
+          }
         },
         callBack: () => this.getData(true)
       })
