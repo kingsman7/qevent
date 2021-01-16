@@ -169,7 +169,7 @@ export default {
           response.data.forEach(event => {
             this.eventsData.push({
               id: event.id,
-              title: `${parseInt(event.status) ? this.$tr('ui.label.cancelled') : ''} ${event.title}`,
+              title: `${!parseInt(event.status) ? this.$tr('ui.label.cancelled') : ''} ${event.title}`,
               color: parseInt(event.status) ? (event.category ? (event.category.options.color || '#26a69a') : '#26a69a') : '#e57373',
               icon: parseInt(event.status) ? 'fas fa-calendar' : 'fas fa-calendar-times',
               image: event.mediaFiles.mainimage.mediumThumb,
