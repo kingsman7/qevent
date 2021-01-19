@@ -61,7 +61,7 @@ export default {
           label: this.$tr('ui.label.update'),
           icon: 'fas fa-pen',
           color: 'green',
-          callBack: (event) => this.$refs.eventCrud.update(event.id)
+          callBack: (event) => this.$refs.eventCrud.update(event)
         }
       ]
     }
