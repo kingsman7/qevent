@@ -12,7 +12,7 @@ export default {
         crudId: this.crudId,
         apiRoute: 'apiRoutes.qevent.categories',
         permission: 'ievent.categories',
-        extraFormFields: 'crud-fields.Ievent.categories',
+        extraFormFields: 'Ievent.crud-fields.categories',
         create: {
           title: this.$tr('qevent.layout.newCategory'),
         },
