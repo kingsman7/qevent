@@ -10,6 +10,7 @@ export default {
     crudData() {
       return {
         crudId: this.crudId,
+        entityName: config("main.qevent.entityNames.category"),
         apiRoute: 'apiRoutes.qevent.categories',
         permission: 'ievent.categories',
         extraFormFields: 'Ievent.crud-fields.categories',

@@ -8,6 +8,7 @@ export default {
     crudData() {
       return {
         crudId: this.crudId,
+        entityName: config("main.qevent.entityNames.event"),
         apiRoute: 'apiRoutes.qevent.events',
         permission: null,
         create: {
