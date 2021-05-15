@@ -11,6 +11,7 @@ export default {
         entityName: config("main.qevent.entityNames.event"),
         apiRoute: 'apiRoutes.qevent.events',
         permission: null,
+        extraFormFields: 'ievent.crud-fields.events',
         create: {
           title: this.$tr('qevent.layout.newEvent'),
         },
