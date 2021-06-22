@@ -15,7 +15,7 @@
         <div class="col-12 col-md-8 col-xl-9 text-right">
           <div class="q-hide q-md-show">
             <q-btn icon="fas fa-plus" round unelevated size="12px" style="font-size: 10px; padding: 6px"
-                   @click="$refs.eventCrud.create()" color="positive" class="q-my-xs">
+                   @click="$refs.eventCrud.create()" color="green" class="q-my-xs">
               <q-tooltip>{{ $tr('qevent.layout.newEvent') }}</q-tooltip>
             </q-btn>
           </div>
