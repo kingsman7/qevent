@@ -1,28 +1,16 @@
 <template>
   <div id="pageEvents" :key="pageId">
+    <!--Page Actions-->
+    <div class="box box-auto-height q-mb-md">
+      <page-actions :extra-actions="['new','search']" :title="$tr($route.meta.title)"
+                    @search="val => {search = val; getData()}" @new="$refs.eventCrud.create()"/>
+    </div>
+
     <!--Content-->
     <div id="contentEvents" class="box relative-position">
       <!--Event crud-->
       <crud :crud-data="import('@imagina/qevent/_crud/events')" type="form-only" ref="eventCrud"
             @created="getData(true)" @updated="getData(true)"/>
-      <!--Actions-->
-      <div class="row justify-between q-py-sm q-px-md items-center">
-        <!--Search-->
-        <div class="col-12 col-md-4 col-xl-3">
-          <dynamic-field :field="dynamicFields.search" v-model="search" @input="getData()"/>
-        </div>
-        <!--Button new record-->
-        <div class="col-12 col-md-8 col-xl-9 text-right">
-          <div class="q-hide q-md-show">
-            <q-btn icon="fas fa-plus" round unelevated size="12px" style="font-size: 10px; padding: 6px"
-                   @click="$refs.eventCrud.create()" color="green" class="q-my-xs">
-              <q-tooltip>{{ $tr('qevent.layout.newEvent') }}</q-tooltip>
-            </q-btn>
-          </div>
-        </div>
-      </div>
-      <!--Separator-->
-      <q-separator/>
       <!--Calendar-->
       <calendar :events-data="eventsData" :event-actions="eventActions"/>
       <!--Inner loading-->
