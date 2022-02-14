@@ -7,7 +7,7 @@ export default {
     name: 'qevent.admin.events',
     page: () => import('@imagina/qevent/_pages/admin/events/index'),
     layout: () => import('@imagina/qsite/_layouts/master.vue'),
-    title: 'qevent.sidebar.adminEvents',
+    title: 'ievent.cms.sidebar.adminEvents',
     icon: 'fas fa-calendar-check',
     subHeader: {
       refresh: true,
@@ -22,7 +22,7 @@ export default {
     crud: import('@imagina/qevent/_crud/categories'),
     page: () => import('@imagina/qcrud/_pages/admin/crudPage.vue'),
     layout: () => import('@imagina/qsite/_layouts/master.vue'),
-    title: 'qevent.sidebar.adminCategories',
+    title: 'ievent.cms.sidebar.adminCategories',
     icon: 'fas fa-calendar-week',
     subHeader: {
       refresh: true,

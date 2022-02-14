@@ -46,7 +46,7 @@ export default {
       search: null,
       eventActions: [
         {
-          label: this.$tr('ui.label.update'),
+          label: this.$tr('isite.cms.label.update'),
           icon: 'fas fa-pen',
           color: 'green',
           callBack: (event) => this.$refs.eventCrud.update(event)
@@ -92,7 +92,7 @@ export default {
             value: null,
             type: 'treeSelect',
             props: {
-              label: this.$tr('ui.label.category')
+              label: this.$tr('isite.cms.label.category')
             },
             loadOptions: {
               apiRoute: 'apiRoutes.qevent.categories'
@@ -102,7 +102,7 @@ export default {
             value: null,
             type: 'treeSelect',
             props: {
-              label: this.$tr('ui.label.department')
+              label: this.$tr('isite.cms.label.department')
             },
             loadOptions: {
               apiRoute: 'apiRoutes.quser.departments'
@@ -112,11 +112,11 @@ export default {
             value: '1',
             type: 'select',
             props: {
-              label: this.$tr('ui.form.status'),
+              label: this.$tr('isite.cms.form.status'),
               clearable: true,
               options: [
-                {label: this.$tr('ui.label.enabled'), value: '1'},
-                {label: this.$tr('ui.label.disabled'), value: '0'},
+                {label: this.$tr('isite.cms.label.enabled'), value: '1'},
+                {label: this.$tr('isite.cms.label.disabled'), value: '0'},
               ]
             },
           }
@@ -157,18 +157,18 @@ export default {
           response.data.forEach(event => {
             this.eventsData.push({
               id: event.id,
-              title: `${!parseInt(event.status) ? this.$tr('ui.label.cancelled') : ''} ${event.title}`,
+              title: `${!parseInt(event.status) ? this.$tr('isite.cms.label.cancelled') : ''} ${event.title}`,
               color: parseInt(event.status) ? (event.category ? (event.category.options.color || '#26a69a') : '#26a69a') : '#e57373',
               icon: parseInt(event.status) ? 'fas fa-calendar' : 'fas fa-calendar-times',
               image: event.mediaFiles.mainimage.mediumThumb,
               date: event.date,
               mainDetails: [
-                {title: this.$tr('ui.label.category'), icon: 'fas fa-calendar-check', value: event.category.title},
-                {title: this.$tr('ui.label.department'), icon: 'fas fa-users', value: event.department.title},
+                {title: this.$tr('isite.cms.label.category'), icon: 'fas fa-calendar-check', value: event.category.title},
+                {title: this.$tr('isite.cms.label.department'), icon: 'fas fa-users', value: event.department.title},
               ],
               extraDetails: [
-                {title: this.$tr('ui.label.category'), icon: 'fas fa-calendar-check', value: event.category.title},
-                {title: this.$tr('ui.label.department'), icon: 'fas fa-users', value: event.department.title},
+                {title: this.$tr('isite.cms.label.category'), icon: 'fas fa-calendar-check', value: event.category.title},
+                {title: this.$tr('isite.cms.label.department'), icon: 'fas fa-users', value: event.department.title},
                 {value: event.description}
               ]
             })
@@ -197,26 +197,26 @@ export default {
               date: event.birthday,
               mainDetails: [
                 {
-                  title: this.$tr('ui.label.category'),
+                  title: this.$tr('isite.cms.label.category'),
                   icon: 'fas fa-calendar-check',
-                  value: this.$tr('ui.label.birthday')
+                  value: this.$tr('isite.cms.label.birthday')
                 },
                 {
-                  title: this.$tr('ui.label.department'),
+                  title: this.$tr('isite.cms.label.department'),
                   icon: 'fas fa-users',
-                  value: this.$tr('ui.label.birthday')
+                  value: this.$tr('isite.cms.label.birthday')
                 },
               ],
               extraDetails: [
                 {
-                  title: this.$tr('ui.label.category'),
+                  title: this.$tr('isite.cms.label.category'),
                   icon: 'fas fa-calendar-check',
-                  value: this.$tr('ui.label.birthday')
+                  value: this.$tr('isite.cms.label.birthday')
                 },
                 {
-                  title: this.$tr('ui.label.department'),
+                  title: this.$tr('isite.cms.label.department'),
                   icon: 'fas fa-users',
-                  value: this.$tr('ui.label.birthday')
+                  value: this.$tr('isite.cms.label.birthday')
                 }
               ]
             })

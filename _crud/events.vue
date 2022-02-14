@@ -13,26 +13,26 @@ export default {
         permission: null,
         extraFormFields: 'ievent.crud-fields.events',
         create: {
-          title: this.$tr('qevent.layout.newEvent'),
+          title: this.$tr('ievent.cms.newEvent'),
         },
         read: {
           columns: [
-            {name: 'id', label: this.$tr('ui.form.id'), field: 'id', style: 'width: 50px'},
-            {name: 'title', label: this.$tr('ui.form.title'), field: 'title', align: 'rigth'},
+            {name: 'id', label: this.$tr('isite.cms.form.id'), field: 'id', style: 'width: 50px'},
+            {name: 'title', label: this.$tr('isite.cms.form.title'), field: 'title', align: 'rigth'},
             {
-              name: 'parent', label: this.$tr('ui.form.parent'), field: 'parent', align: 'left',
+              name: 'parent', label: this.$tr('isite.cms.form.parent'), field: 'parent', align: 'left',
               format: val => val ? (val.title ? val.title : '-') : '-'
             },
             {
-              name: 'created_at', label: this.$tr('ui.form.createdAt'), field: 'createdAt', align: 'left',
+              name: 'created_at', label: this.$tr('isite.cms.form.createdAt'), field: 'createdAt', align: 'left',
               format: val => val ? this.$trd(val) : '-',
             },
-            {name: 'actions', label: this.$tr('ui.form.actions'), align: 'left'},
+            {name: 'actions', label: this.$tr('isite.cms.form.actions'), align: 'left'},
           ],
           requestParams: {}
         },
         update: {
-          title: this.$tr('qevent.layout.updateEvent'),
+          title: this.$tr('ievent.cms.updateEvent'),
           requestParams: {}
         },
         delete: true,
@@ -43,17 +43,17 @@ export default {
             value: '',
             type: 'input',
             props: {
-              label: `${this.$tr('ui.form.title')}*`,
-              rules: [val => !!val || this.$tr('ui.message.fieldRequired')]
+              label: `${this.$tr('isite.cms.form.title')}*`,
+              rules: [val => !!val || this.$tr('isite.cms.message.fieldRequired')]
             },
           },
           slug: {
             value: '',
             type: 'input',
             props: {
-              label: `${this.$tr('ui.form.slug')}*`,
+              label: `${this.$tr('isite.cms.form.slug')}*`,
               rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
+                val => !!val || this.$tr('isite.cms.message.fieldRequired')
               ],
             },
           },
@@ -61,9 +61,9 @@ export default {
             value: '',
             type: 'html',
             props: {
-              label: `${this.$tr('ui.form.description')}*`,
+              label: `${this.$tr('isite.cms.form.description')}*`,
               rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
+                val => !!val || this.$tr('isite.cms.message.fieldRequired')
               ],
             }
           },
@@ -73,8 +73,8 @@ export default {
             value: null,
             type: 'date',
             props: {
-              label: `${this.$tr('ui.form.date')}*`,
-              rules: [val => !!val || this.$tr('ui.message.fieldRequired')],
+              label: `${this.$tr('isite.cms.form.date')}*`,
+              rules: [val => !!val || this.$tr('isite.cms.message.fieldRequired')],
               options: (date) => date >= this.$moment().format('YYYY/MM/DD')
             },
           },
@@ -82,8 +82,8 @@ export default {
             value: null,
             type: 'hour',
             props: {
-              label: `${this.$tr('ui.form.hour')}*`,
-              rules: [val => !!val || this.$tr('ui.message.fieldRequired')],
+              label: `${this.$tr('isite.cms.form.hour')}*`,
+              rules: [val => !!val || this.$tr('isite.cms.message.fieldRequired')],
               options: (hr, min, sec) => {
                 //If is diferent day permit all times
                 if (!this.crudInfo.date || (this.crudInfo.date) != this.$moment().format('YYYY/MM/DD'))
@@ -102,8 +102,8 @@ export default {
               crudType: 'select',
               crudData: import('@imagina/qevent/_crud/categories'),
               crudProps: {
-                label: `${this.$tr('ui.form.category')}*`,
-                rules: [val => !!val || this.$tr('ui.message.fieldRequired')],
+                label: `${this.$tr('isite.cms.form.category')}*`,
+                rules: [val => !!val || this.$tr('isite.cms.message.fieldRequired')],
               },
             },
           },
@@ -111,8 +111,8 @@ export default {
             value: null,
             type: 'select',
             props: {
-              label: `${this.$tr('ui.label.department')}*`,
-              rules: [val => !!val || this.$tr('ui.message.fieldRequired')],
+              label: `${this.$tr('isite.cms.label.department')}*`,
+              rules: [val => !!val || this.$tr('isite.cms.message.fieldRequired')],
             },
             loadOptions: {
               apiRoute: 'apiRoutes.quser.departments'
@@ -122,10 +122,10 @@ export default {
             value: 1,
             type: 'select',
             props: {
-              label: `${this.$tr('ui.form.type')}`,
+              label: `${this.$tr('isite.cms.form.type')}`,
               options: [
-                {label: this.$tr('ui.label.public'), value: 1},
-                {label: this.$tr('ui.label.private'), value: 0},
+                {label: this.$tr('isite.cms.label.public'), value: 1},
+                {label: this.$tr('isite.cms.label.private'), value: 0},
               ]
             }
           },
@@ -133,10 +133,10 @@ export default {
             value: '1',
             type: 'select',
             props: {
-              label: this.$tr('ui.form.status'),
+              label: this.$tr('isite.cms.form.status'),
               options: [
-                {label: this.$tr('ui.label.enabled'), value: '1'},
-                {label: this.$tr('ui.label.disabled'), value: '0'},
+                {label: this.$tr('isite.cms.label.enabled'), value: '1'},
+                {label: this.$tr('isite.cms.label.disabled'), value: '0'},
               ]
             },
           },
@@ -144,7 +144,7 @@ export default {
             value: {},
             type: 'media',
             props: {
-              label: this.$tr('ui.form.image'),
+              label: this.$tr('isite.cms.form.image'),
               zone: 'mainimage',
               entity: "Modules\\Ievent\\Entities\\Event",
               entityId: null

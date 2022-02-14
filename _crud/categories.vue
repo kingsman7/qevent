@@ -15,28 +15,28 @@ export default {
         permission: 'ievent.categories',
         extraFormFields: 'Ievent.crud-fields.categories',
         create: {
-          title: this.$tr('qevent.layout.newCategory'),
+          title: this.$tr('ievent.cms.newCategory'),
         },
         read: {
           columns: [
-            {name: 'id', label: this.$tr('ui.form.id'), field: 'id', style: 'width: 50px'},
-            {name: 'name', label: this.$tr('ui.form.title'), field: 'title', align: 'rigth'},
-            {name: 'slug', label: this.$tr('ui.form.slug'), field: 'slug', align: 'left'},
-            {name: 'status', label: this.$tr('ui.form.status'), field: 'status', align: 'left'},
+            {name: 'id', label: this.$tr('isite.cms.form.id'), field: 'id', style: 'width: 50px'},
+            {name: 'name', label: this.$tr('isite.cms.form.title'), field: 'title', align: 'rigth'},
+            {name: 'slug', label: this.$tr('isite.cms.form.slug'), field: 'slug', align: 'left'},
+            {name: 'status', label: this.$tr('isite.cms.form.status'), field: 'status', align: 'left'},
             {
-              name: 'parent', label: this.$tr('ui.form.parent'), field: 'parent', align: 'left',
+              name: 'parent', label: this.$tr('isite.cms.form.parent'), field: 'parent', align: 'left',
               format: val => val ? (val.title ? val.title : '-') : '-'
             },
             {
-              name: 'created_at', label: this.$tr('ui.form.createdAt'), field: 'createdAt', align: 'left',
+              name: 'created_at', label: this.$tr('isite.cms.form.createdAt'), field: 'createdAt', align: 'left',
               format: val => val ? this.$trd(val) : '-',
             },
-            {name: 'actions', label: this.$tr('ui.form.actions'), align: 'left'},
+            {name: 'actions', label: this.$tr('isite.cms.form.actions'), align: 'left'},
           ],
           requestParams: {include: 'parent'}
         },
         update: {
-          title: this.$tr('qevent.layout.updateCategory'),
+          title: this.$tr('ievent.cms.updateCategory'),
           requestParams: {include: 'parent'}
         },
         delete: true,
@@ -48,9 +48,9 @@ export default {
             type: 'input',
             isTranslatable: true,
             props: {
-              label: `${this.$tr('ui.form.title')}*`,
+              label: `${this.$tr('isite.cms.form.title')}*`,
               rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
+                val => !!val || this.$tr('isite.cms.message.fieldRequired')
               ],
             },
           },
@@ -59,9 +59,9 @@ export default {
             type: 'input',
             isTranslatable: true,
             props: {
-              label: `${this.$tr('ui.form.slug')}*`,
+              label: `${this.$tr('isite.cms.form.slug')}*`,
               rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
+                val => !!val || this.$tr('isite.cms.message.fieldRequired')
               ],
             }
           },
@@ -70,9 +70,9 @@ export default {
             type: 'html',
             isTranslatable: true,
             props: {
-              label: `${this.$tr('ui.form.description')}*`,
+              label: `${this.$tr('isite.cms.form.description')}*`,
               rules: [
-                val => !!val || this.$tr('ui.message.fieldRequired')
+                val => !!val || this.$tr('isite.cms.message.fieldRequired')
               ],
             }
           }
@@ -82,10 +82,10 @@ export default {
             value: '1',
             type: 'select',
             props: {
-              label: `${this.$tr('ui.form.status')}:`,
+              label: `${this.$tr('isite.cms.form.status')}:`,
               options: [
-                {label: this.$tr('ui.label.enabled'), value: '1'},
-                {label: this.$tr('ui.label.disabled'), value: '0'},
+                {label: this.$tr('isite.cms.label.enabled'), value: '1'},
+                {label: this.$tr('isite.cms.label.disabled'), value: '0'},
               ]
             }
           },
@@ -93,9 +93,9 @@ export default {
             value: '0',
             type: 'select',
             props: {
-              label: this.$tr('ui.form.parent'),
+              label: this.$tr('isite.cms.form.parent'),
               options: [
-                {label: this.$tr('ui.label.disabled'), value: '0'},
+                {label: this.$tr('isite.cms.label.disabled'), value: '0'},
               ],
             },
             loadOptions: {
@@ -109,7 +109,7 @@ export default {
             type: 'inputColor',
             isFakeField : true,
             props: {
-              label: `${this.$tr('ui.label.color')}*`,
+              label: `${this.$tr('isite.cms.label.color')}*`,
             }
           },
           mediasSingle: {
@@ -117,7 +117,7 @@ export default {
             value: {},
             type: 'media',
             props : {
-              label: this.$tr('ui.form.firstImage'),
+              label: this.$tr('isite.cms.form.firstImage'),
               zone: 'mainimage',
               entity: "Modules\\Ievent\\Entities\\Category",
               entityId: null
@@ -128,7 +128,7 @@ export default {
             value: {},
             type: 'media',
             props : {
-              label: this.$tr('ui.form.secondaryImage'),
+              label: this.$tr('isite.cms.form.secondaryImage'),
               zone: 'secondaryimage',
               entity: "Modules\\Ievent\\Entities\\Category",
               entityId: null
