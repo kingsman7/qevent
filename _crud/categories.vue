@@ -1,6 +1,13 @@
-<template></template>
+<template>
+  <config-crud ref="configCrud" />
+</template>
 <script>
+import configCrud from "@imagina/qcrud/_config/CrudConfig"
+import Json from "@imagina/qevent/_crud/categories.json"
 export default {
+  components:{
+    configCrud
+  },
   data() {
     return {
       crudId: this.$uid()
@@ -9,7 +16,8 @@ export default {
   computed: {
     crudData() {
       return {
-        crudId: this.crudId,
+        ...this.$refs.configCrud.getData(Json),
+        /*crudId: this.crudId,
         entityName: config("main.qevent.entityNames.category"),
         apiRoute: 'apiRoutes.qevent.categories',
         permission: 'ievent.categories',
@@ -39,7 +47,7 @@ export default {
           title: this.$tr('ievent.cms.updateCategory'),
           requestParams: {include: 'parent'}
         },
-        delete: true,
+        delete: true,*/
         formLeft: {
           id: {value: ''},
           userId: {value: this.$store.state.quserAuth.userId},

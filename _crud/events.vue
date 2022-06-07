@@ -1,13 +1,21 @@
-<template></template>
+<template>
+  <config-crud ref="configCrud" />
+</template>
 <script>
+import configCrud from "@imagina/qcrud/_config/CrudConfig"
+import Json from "@imagina/qevent/_crud/events.json"
 export default {
+  components:{
+    configCrud
+  },
   data() {
     return {crudId: this.$uid()}
   },
   computed: {
     crudData() {
       return {
-        crudId: this.crudId,
+        ...this.$refs.configCrud.getData(Json),
+       /* crudId: this.crudId,
         entityName: config("main.qevent.entityNames.event"),
         apiRoute: 'apiRoutes.qevent.events',
         permission: null,
@@ -35,7 +43,7 @@ export default {
           title: this.$tr('ievent.cms.updateEvent'),
           requestParams: {}
         },
-        delete: true,
+        delete: true,*/
         formLeft: {
           id: {value: ''},
           userId: {value: this.$store.state.quserAuth.userId},

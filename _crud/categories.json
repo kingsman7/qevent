@@ -1,0 +1,102 @@
+{
+  "crudId": "ievent-crud-categories",
+  "entityName": "category",
+  "apiRoute": "/ievent/v1/categories",
+  "permission": "ievent.categories",
+  "extraFormFields": "ievent.crud-fields.categories",
+  "create": {
+    "title":"ievent.cms.newCategory"
+  },
+  "read": {
+    "columns": [
+      {
+        "name": "id",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.id"
+        },
+        "field": "id",
+        "align": "left",
+        "style": "width: 50px",
+        "sortable": false
+      },
+      {
+        "name": "name",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.title"
+        },
+        "field": "title",
+        "sortable": false,
+        "align": "left"
+      },
+      {
+        "name": "slug",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.slug"
+        },
+        "field": "slug",
+        "align": "left",
+        "sortable": false
+      },
+      {
+        "name": "status",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.status"
+        },
+        "field": "status",
+        "align": "left",
+        "sortable": false
+      },
+      {
+        "name": "parent",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.parent"
+        },
+        "field": "parent",
+        "sortable": false,
+        "align": "left",
+        "format":{
+          "type":"str"
+        }
+      },
+      {
+        "name": "created_at",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.createdAt"
+        },
+        "field": "createdAt",
+        "sortable": false,
+        "align": "right",
+        "format":{
+          "type":"date",
+          "includes": {
+            "type":"long"
+          }
+        }
+      },
+      {
+        "name": "actions",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.actions"
+        },
+        "field": "actions",
+        "sortable": false,
+        "align": "left"
+      }
+    ],
+    "requestParams": {
+      "include": "parent"
+    }
+  },
+  "update": {
+    "title": "ievent.cms.updateCategory",
+    "requestParams": {"include": "parent"}
+  },
+  "delete": true
+}

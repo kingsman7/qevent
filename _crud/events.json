@@ -1,0 +1,80 @@
+{
+  "crudId": "ievent-crud-events",
+  "entityName": "event",
+  "apiRoute": "/ievent/v1/events",
+  "permission": "ievent.events",
+  "extraFormFields": "ievent.crud-fields.events",
+  "create": {
+    "title":"ievent.cms.newEvent"
+  },
+  "read": {
+    "columns": [
+      {
+        "name": "id",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.id"
+        },
+        "field": "id",
+        "align": "left",
+        "style": "width: 50px",
+        "sortable": false
+      },
+      {
+        "name": "title",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.title"
+        },
+        "field": "title",
+        "sortable": false,
+        "align": "right"
+      },
+      {
+        "name": "parent",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.parent"
+        },
+        "field": "parent",
+        "sortable": false,
+        "align": "left",
+        "format":{
+          "type":"str"
+        }
+      },
+      {
+        "name": "created_at",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.createdAt"
+        },
+        "field": "createdAt",
+        "sortable": false,
+        "align": "right",
+        "format":{
+          "type":"date",
+          "includes": {
+            "type":"long"
+          }
+        }
+      },
+      {
+        "name": "actions",
+        "label": {
+          "isTranslatable": "singular",
+          "value": "isite.cms.form.actions"
+        },
+        "field": "actions",
+        "sortable": false,
+        "align": "left"
+      }
+    ],
+    "requestParams": {}
+  },
+  "update": {
+    "title": "ievent.cms.updateEvent",
+    "requestParams": {"include": "parent"}
+  },
+  "delete": true
+}
